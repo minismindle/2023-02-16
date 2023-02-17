@@ -6,3 +6,24 @@ const char** pp = &msg;
 다중 포인터 -> 양파 까기
 *을 하나씩 가면서 타고 간다고 생각하자!
 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const char* msg = "Hello";
+    const char** pp = &msg;
+    *pp = "Bye";
+    const char*& pr = msg;
+    pr = "Hi";
+    int n = 0;
+    int* p = &n;
+    *p = 3;
+    int& r = n;
+    r = 1;
+    cout << msg << endl;
+    cout << n << endl;
+    return 0;
+}
+result -> Hi
+          1
